@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validações de String</title>
+</head>
+
+<body>
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <h1>Validações de String</h1>
+        <p>Todas validações forem enviadas via console</p>
+        <input type="text" name="" id="ipt_texto">
+        <br><br>
+        <button onclick="validar()">Validar Frase</button>
+    </div>
+</body>
+<script>
+    function validar() {
+        let frase = ipt_texto.value;
+
+        let contem_bob_inicio = frase.startsWith("Bob");
+        console.log(`O texto começa com Bob? ${contem_bob_inicio}`);
+
+        let contem_bob_fim = frase.endsWith("Bob");
+        console.log(`O texto termina com Bob? ${contem_bob_fim}`);
+
+        let cpf_limpo = frase.trim(); // Retira os espaçoes do começo e fim
+        console.log(`Exemplo CPF original ${frase}`);
+        console.log(`Exemplo CPF tratado: ${cpf_limpo}`);
+
+        let tamanho_frase = frase.length;
+        console.log(`O tamanho da frase é: ${tamanho_frase}`);
+
+        let primeira_letra = frase[0];
+        console.log(`Primeira letra da frase: ${primeira_letra}`);
+
+        let ultima_letra = frase[tamanho_frase - 1];
+        console.log(`Ultima letra da frase: ${ultima_letra}`);
+
+        let indice_oi = frase.indexOf("oi");
+        console.log(indice_oi >= 0?`A palavra oi foi encontrada na posição: ${indice_oi}`: `Não tem oi na sua frase`); //indice que da palavra que aparece na primeira vez
+
+        let frase_caixa_alta = frase.toUpperCase();
+        console.log(`Frase GRITANTO: ${frase_caixa_alta}`);
+
+        let frase_caixa_baixa = frase.toLowerCase();
+        console.log(`Agora tudo minusculo: ${frase_caixa_baixa}`);
+
+        let frase_separada = frase.split(" ");
+        console.log(`Frase separada por , : ${frase_separada}`)
+
+        let frase_com_replace = frase.replace("-", "___")
+        console.log(`Frase usando o replace para substituir - para ___ : ${frase_com_replace}`)
+
+        let contem_oi = frase.includes("oi");
+        console.log(contem_oi ? `O termo oi está na frase` : `O termo oi não está na frase`);
+
+        let primeiro_nome = "";
+        for (let i = 0; i < frase.length; i++) {
+            if (frase[i] === " ") {
+                break;
+            } else {
+                primeiro_nome += frase[i];
+            }
+        }
+
+        console.log(`O primeiro nome é: ${primeiro_nome}`);
+    }
+
+</script>
+
+</html>
