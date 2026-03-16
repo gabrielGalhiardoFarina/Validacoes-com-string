@@ -57,6 +57,9 @@
         let contem_oi = frase.includes("oi");
         console.log(contem_oi ? `O termo oi está na frase` : `O termo oi não está na frase`);
 
+        let frase_substring = frase.substring(2,5);
+        console.log(`Pegando uma string da terceira letra ate a 5ª: ${frase_substring}`)
+
         let primeiro_nome = "";
         for (let i = 0; i < frase.length; i++) {
             if (frase[i] === " ") {
